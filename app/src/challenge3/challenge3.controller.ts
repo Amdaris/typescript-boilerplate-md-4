@@ -12,8 +12,8 @@ export class Challenge3Controller {
   @Post('/challenge-3')
   @HttpCode(200)
   @ApiBody({ isArray: true, schema: { items: { type: "number" } } })
-  @ApiResponse({ type: Boolean })
-  getResult(@Body() body: number[]): boolean {
+  @ApiResponse({ type: Number })
+  getResult(@Body() body: number[]): number {
     return this.challenge3Service.getResult(body);
   }
 }
